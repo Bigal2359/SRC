@@ -1,0 +1,156 @@
+/*
+Contact Form by html-form-guide.com
+You can customize all the aspects of the form in this style sheet
+All the style elements use form id selector(notice the #contactus). So, including this
+stylesheet does not affect the other elements at all!
+*/
+/* reset browser styles */
+html, body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote {
+ padding: 0;
+ margin: 0;
+ font-size: 100%;
+ font-weight: normal;
+}
+ol { 
+  margin-left: 1.4em; 
+  list-style: decimal; 
+}
+ul { 
+  margin-left: 1.4em; 
+  list-style:disc; 
+}
+img {
+  border: 0;
+  margin:0;
+}
+/* end reset browser styles */
+
+body {
+  color: #FFFFFF;
+}
+
+p {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+	margin: 7px 0;
+}
+#contactus fieldset
+{
+   width: 530px;
+   border: none;
+}
+
+#contactus legend, h2
+{
+   font-family: 'eausans_black';
+   font-size: 32px;
+   text-transform: uppercase;
+   margin-top: 20px;
+}
+
+#contactus label
+{
+   font-family: Arial, sans-serif;
+   font-size: 16px;
+   line-height: 1.5em;
+   margin-top: 7px;
+}
+
+#contactus input[type="text"],textarea
+{
+  font-family : Arial, Verdana, sans-serif;
+  font-size: 0.8em;
+  line-height:140%;
+  color: #000; 
+  padding: 3px;
+  width: 100%;
+
+}
+
+#contactus #scaptcha
+{
+  width:60px;
+  height:18px;
+}
+
+#contactus input[type="submit"]
+{
+   color: #fff;
+   cursor: pointer;
+   padding: 10px 15px;
+   text-decoration: none;
+   float: right;
+   font-family: 'eausans_black';
+   font-size: 16px;
+   text-align: center;
+   letter-spacing: 0.1em;
+   background: #f33b7e;
+   border:none;  
+}
+
+#contactus textarea
+{
+  width:100%; 
+}
+
+#contactus .container
+{
+   margin-top:8px;
+   margin-bottom: 20px;
+}
+
+#contactus .error
+{
+   font-family: Verdana, Arial, sans-serif; 
+   font-size: 0.7em;
+   color: #ffff00;
+}
+
+#contactus fieldset#antispam legend
+{
+   font-family : Arial, sans-serif;
+   font-size: 0.8em;
+   font-weight:bold;  
+}
+
+#contactus .short_explanation
+{
+   font-family : Arial, sans-serif;
+   font-size: 0.6em;  
+}
+
+/* spam_trap: This input is hidden. This is here to trick the spam bots*/
+#contactus .spmhidip
+{
+   display:none;
+   width:10px;
+   height:3px;
+}
+#fg_crdiv
+{
+   font-family : Arial, sans-serif;
+   font-size: 0.3em;
+   opacity: .2;
+   -moz-opacity: .2;
+   filter: alpha(opacity=20);   
+}
+#fg_crdiv p
+{
+    display:none;
+}
+
+.name-container {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.name-container .container {
+  margin-top: 0;
+  width: 45%;
+  float: left;
+}
+
+.name-container .container:first-child {
+  margin-right: 10%;
+}

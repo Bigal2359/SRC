@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Christina &amp; Cortney - June 27, 2015</title>
+	<link rel="stylesheet" href="css/test.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+    <nav id="main-menu">
+            <ul id="nav">
+                <li class="active">
+                    <a href="/" rel="home">home</a>
+                </li><!--    
+             --><li class="separator"></li><!--    
+             --><li>
+                    <a href="ourstory.html" rel="annieandrenje">our story</a>
+                </li><!--    
+             --><li class="separator"></li><!--    
+             --><li>
+                    <a href="ourwedding.html" rel="thewedding">our wedding</a>
+                </li><!--    
+             --><li class="separator"></li><!--    
+             --><li>
+                    <a href="details.html" rel="thewedding">details</a>
+                </li><!--    
+             --><li class="separator"></li><!--    
+             --><li>
+                    <a href="registry.html" rel="register">registry</a>
+                </li>
+
+            </ul>
+
+    </nav>
+    <div id="panda_overlay"></div>
+		<img id="image_0" class="gallery_image" src="images/love.jpg" width="1600" height="1067" alt="Image 0" />
+		<img id="image_1" class="gallery_image" src="images/champ.jpg" width="1600" height="1067" alt="Image 1" />
+        <img id="image_2" class="gallery_image" src="images/boston.jpg" width="1600" height="1067" alt="Image 3" />
+		<img id="image_3" class="gallery_image" src="images/navy.jpg" width="1600" height="1067" alt="Image 4" />
+		<img id="image_4" class="gallery_image" src="images/es.jpg" width="1600" height="1067" alt="Image 5" />
+        <img id="image_5" class="gallery_image" src="images/social.jpg" width="1600" height="1067" alt="Image 6" />
+        <script>
+	var numImages = 6;
+	var currentImage = 0;
+	//var sizeArray = [];
+	
+	$(document).ready(function() {
+		resizeImages();
+		
+		for(var i = 0; i < numImages; i++)
+		{
+			//sizeArray.push({'width':$('#image_'+i).width(), 'height':$('#image_'+i).height()});
+			$('#image_'+i).hide();
+		}
+		
+		$('#image_0').fadeIn(2000); // start off
+		var rotateImages = setInterval(rotateImages_fn, 5000);
+	});
+	
+	$(window).resize(function() {
+		resizeImages();
+	});
+
+	rotateImages_fn = function()
+	{			
+		var nextImage = currentImage;
+		if(nextImage+1 < numImages) { nextImage++ }
+		else { nextImage = 0; }
+		
+		$('#image_'+(currentImage)).css('zIndex', 0);
+		$('#image_'+(nextImage)).css('zIndex', 10);
+		
+		$('#image_'+(nextImage)).fadeIn(2000, function() {
+			$('#image_'+(currentImage)).hide();
+			currentImage = nextImage;
+		});
+	}
+	
+	resizeImages = function()
+	{
+		var wHeight = $(window).height();
+		var wWidth = $(window).width();
+		
+		for(var i = 0; i < numImages; i++)
+		{
+			if(wWidth > wHeight) // Images are wider than they are tall.
+			{
+				var iHeight = $('#image_'+i).height();
+				var iWidth = $('#image_'+i).width();
+				var ratio = iHeight/iWidth;
+
+				$('#image_'+i).width(wWidth);
+				$('#image_'+i).height(wWidth*ratio);
+				
+				if($('#image_'+i).height() < $(window).height()) {
+					var ratio = iWidth/iHeight;
+					$('#image_'+i).height(wHeight);
+					$('#image_'+i).width(wHeight*ratio);
+				}
+			}
+			else
+			{
+				var iHeight = $('#image_'+i).height();
+				var iWidth = $('#image_'+i).width();
+				var ratio = iWidth/iHeight;
+				
+				$('#image_'+i).height(wHeight);
+				$('#image_'+i).width(wHeight*ratio);
+				
+				if($('#image_'+i).width() < $(window).width()){
+					var ratio = iHeight/iWidth;
+					$('#image_'+i).width(wWidth);
+					$('#image_'+i).height(wWidth*ratio);
+				}
+			}
+			//console.log($('#image_'+i).height());
+			$('#image_'+i).offset({top: ($(window).height()-$('#image_'+i).height)/2, left: ($(window).width()-$('#image_'+i).width)/2});
+		}
+	}
+	
+	</script>
+</body>
+</html>
