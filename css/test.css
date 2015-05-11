@@ -361,6 +361,7 @@ input#mc-embedded-subscribe,
 	border: none;
 	color: #ffffff;
 	font: 20px 'LinuxLibertineORegular', Arial, sans-serif;
+	font-weight: bold;
 	margin-bottom: 30px;
 	padding: 10px 12px;
 }
