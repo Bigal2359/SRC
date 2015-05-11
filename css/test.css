@@ -360,6 +360,7 @@ input#mc-embedded-subscribe,
 	background-color: #f33b7e;
 	border: none;
 	color: #ffffff;
+	font: 20px 'LinuxLibertineORegular', Arial, sans-serif;
 	margin-bottom: 30px;
 	padding: 10px 12px;
 }
