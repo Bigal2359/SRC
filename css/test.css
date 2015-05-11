@@ -355,12 +355,17 @@ input[type="email"] {
 	text-align: right;
 }
 
-input#mc-embedded-subscribe {
+input#mc-embedded-subscribe,
+.cta a {
 	background-color: #f33b7e;
 	border: none;
 	color: #ffffff;
 	margin-bottom: 30px;
 	padding: 10px 12px;
+}
+
+p.cta {
+	margin: 25px 0;
 }
 
 .indicates-required {
